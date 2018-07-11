@@ -6,7 +6,7 @@ export const sendMsg = message => dispatch => {
 
 const newMessage = message => ({
   type: NEW_MESSAGES,
-  message: { name: "you", messages: message, icon: "" }
+  message
 });
 
 export const receiveMessage = message => ({

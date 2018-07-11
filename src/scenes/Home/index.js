@@ -24,7 +24,8 @@ class Home extends Component {
     e.preventDefault();
     const { sendMsg } = this.props;
     if (this.state.value) {
-      sendMsg(this.state.value);
+      const msg = { name: "you", messages: this.state.value, icon: "" };
+      sendMsg(msg);
     }
     this.setState({ value: "" });
   }

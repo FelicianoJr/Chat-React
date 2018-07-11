@@ -1,5 +1,6 @@
 import messages from "./messages";
-import { newMessage, receiveMessage } from "../actions";
+import { receiveMessage } from "../actions";
+import { NEW_MESSAGES } from "../constants";
 
 describe("reducer messages", () => {
   let message;
@@ -26,7 +27,12 @@ describe("reducer messages", () => {
   });
 
   it("should handle NEW MESSAGE", () => {
-    expect(messages(list, newMessage(message))).toEqual([
+    expect(
+      messages(list, {
+        type: NEW_MESSAGES,
+        message: message
+      })
+    ).toEqual([
       {
         name: "Evline",
         messages:
