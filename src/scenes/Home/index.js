@@ -5,9 +5,30 @@ import Input from "../../components/Input";
 import { connect } from "react-redux";
 import ListChats from "../../components/ListChat";
 import NavBar from "../../components/NavBar";
+import { sendMsg } from "../../actions";
 
 class Home extends Component {
-  
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+
+    this.sendClick = this.sendClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  sendClick(e) {
+    e.preventDefault();
+    const { sendMsg } = this.props;
+    if (this.state.value) {
+      sendMsg(this.state.value);
+    }
+    this.setState({ value: "" });
+  }
+
   render() {
     const { messages } = this.props;
     return (
@@ -16,10 +37,10 @@ class Home extends Component {
         <div className="flex-container">
           <ListChats messages={messages} />
         </div>
-        <div className="navigation-bottom">
-          <Input />
+        <form onSubmit={this.sendClick} className="navigation-bottom">
+          <Input value={this.state.value} onChange={this.handleChange} />
           <Button name="Send" />
-        </div>
+        </form>
       </div>
     );
   }
@@ -29,7 +50,11 @@ const mapStateToProps = state => ({
   messages: state
 });
 
+const mapDispatchToProps = {
+  sendMsg
+};
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Home);

@@ -35,6 +35,7 @@ const listMessages = [
 const messages = (state = listMessages, action) => {
   switch (action.type) {
     case NEW_MESSAGES:
+    console.log(action)
       return [
         ...state,
         {
