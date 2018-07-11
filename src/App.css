@@ -1,0 +1,70 @@
+
+
+.navigation-bottom  {
+  display: flex;
+  justify-content: flex-end;
+  height: 6%
+}
+
+.theme {
+  background-color: teal;
+  color: white;
+  font-size:15px;
+}
+
+.offline {
+  color:gainsboro;
+}
+
+.avatar {
+  background-image: url("./icons/icons8-female-user.svg");
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 28px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13), 0 3px 6px rgba(0, 0, 0, 0.13);
+  font-size: 0;
+  margin: 10px;
+}
+
+.avatar-empty {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+.receive-msg {
+  background-color: gainsboro;
+  float: right;
+  color: black;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 10px;
+  max-width: 250px;
+}
+
+.send-msg {
+  background-color: khaki;
+  float: right;
+  color: black;
+  padding: 10px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin: 10px;
+  max-width: 250px;
+  clear: both;
+}
+
+.flex-container {
+  height: 85%;
+  background-color: ghostwhite;
+  overflow: scroll;
+  overflow-x: hidden;
+}

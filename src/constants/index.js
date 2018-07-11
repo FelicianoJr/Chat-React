@@ -1,0 +1,3 @@
+export const NEW_MESSAGES = "NEW_MESSAGES";
+
+export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES";
